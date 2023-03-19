@@ -8,12 +8,6 @@ const {
 } = process.env;
 
 module.exports = {
-  apps: [
-    {
-      name: "pm2-front",
-      script: "./frontend/build/index.html",
-    },
-  ],
   deploy: {
     production: {
       user: DEPLOY_USER,
