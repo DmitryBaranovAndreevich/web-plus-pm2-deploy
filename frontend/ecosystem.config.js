@@ -1,10 +1,10 @@
-require('dotenv').config();
+require("dotenv").config();
 
 const {
   DEPLOY_USER,
   DEPLOY_HOST,
   DEPLOY_PATH,
-  DEPLOY_REF = 'origin/master',
+  DEPLOY_REF = "origin/master",
 } = process.env;
 
 module.exports = {
@@ -15,7 +15,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: "https://github.com/DmitryBaranovAndreevich/web-plus-pm2-deploy.git",
       path: DEPLOY_PATH,
-      "post-deploy": "cd frontend npm i && npm run build",
+      "post-deploy": "cd frontend && npm i && npm run build",
     },
   },
 };
