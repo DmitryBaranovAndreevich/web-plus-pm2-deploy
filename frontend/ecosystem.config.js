@@ -15,7 +15,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: "https://github.com/DmitryBaranovAndreevich/web-plus-pm2-deploy.git",
       path: DEPLOY_PATH,
-      "post-deploy": "rm -rf backend && cd frontend && npm i && npm run build && $ scp -Cr ./build/* /home/user-admin/pm2-frontend",
+      "post-deploy": "rm -rf backend && cd frontend && npm i && npm run build",
     },
   },
 };
