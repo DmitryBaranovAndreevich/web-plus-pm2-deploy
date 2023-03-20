@@ -8,12 +8,12 @@ const {
 } = process.env;
 
 module.exports = {
-  apps: [
-    {
-      name: "pm2-backend",
-      script: "dist/app.js",
-    },
-  ],
+  // apps: [
+  //   {
+  //     name: "pm2-backend",
+  //     script: "dist/app.js",
+  //   },
+  // ],
 
   // Настройка деплоя
   deploy: {
