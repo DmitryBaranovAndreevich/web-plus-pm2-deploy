@@ -24,7 +24,8 @@ module.exports = {
       repo: "https://github.com/DmitryBaranovAndreevich/web-plus-pm2-deploy.git",
       path: DEPLOY_PATH,
       "pre-deploy-local": `scp .env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
-      "post-deploy": "rm -rf frontend && cd backend && npm i && npm run build",
+      "post-deploy":
+        "rm -rf frontend && cd backend && npm i &&  ./node_modules/.bin/pm2 start src/app.ts",
     },
   },
 };
