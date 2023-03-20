@@ -11,7 +11,7 @@ module.exports = {
   apps: [
     {
       name: "pm2-backend",
-      script: ".backend/dist/app.js",
+      script: "dist/app.js",
     },
   ],
 
