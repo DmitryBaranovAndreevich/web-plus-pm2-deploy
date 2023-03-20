@@ -24,7 +24,7 @@ module.exports = {
       repo: "https://github.com/DmitryBaranovAndreevich/mesto-project-plus.git",
       path: DEPLOY_PATH,
       "pre-deploy-local": `scp .env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
-      "post-deploy": "cd backend && npm i && npm run build",
+      "post-deploy": "cd pm2-backend && npm i && npm run build",
     },
   },
 };
