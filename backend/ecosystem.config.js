@@ -25,7 +25,7 @@ module.exports = {
       path: DEPLOY_PATH,
       "pre-deploy-local": `scp .env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
       "post-deploy":
-        "rm -rf frontend && cd backend && npm i &&  npm run build &&  ./node_modules/.bin/pm2 startOrRestart process.json --env production",
+        "rm -rf frontend && cd backend && npm i &&  npm run build &&  ./node_modules/.bin/pm2 startOrRestart",
     },
   },
 };
