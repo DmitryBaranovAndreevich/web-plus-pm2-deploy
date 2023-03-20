@@ -8,12 +8,12 @@ const {
 } = process.env;
 
 module.exports = {
-  apps: [
-    {
-      name: "pm2-backend",
-      script: "./dist/app.js",
-    },
-  ],
+  // apps: [
+  //   {
+  //     name: "pm2-backend",
+  //     script: "./dist/app.js",
+  //   },
+  // ],
 
   // Настройка деплоя
   deploy: {
@@ -25,7 +25,7 @@ module.exports = {
       path: DEPLOY_PATH,
       "pre-deploy-local": `scp .env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
       "post-deploy":
-        "rm -rf frontend && cd backend && npm i &&  npm run build && pm2 start",
+        "rm -rf frontend && cd backend && npm i &&  npm run build && pm2 start ./dist/app.js",
     },
   },
 };
