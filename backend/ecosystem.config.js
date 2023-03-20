@@ -11,7 +11,7 @@ module.exports = {
   apps: [
     {
       name: "pm2-backend",
-      script: "./backend/dist/app.js",
+      script: "./dist/app.js",
     },
   ],
 
@@ -25,7 +25,7 @@ module.exports = {
       path: DEPLOY_PATH,
       "pre-deploy-local": `scp .env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
       "post-deploy":
-        "rm -rf frontend && cd backend && npm i &&  ./node_modules/.bin/pm2 start src/app.ts",
+        "rm -rf frontend && cd backend && npm i &&  npm run build",
     },
   },
 };
