@@ -11,7 +11,8 @@ module.exports = {
   apps: [
     {
       name: "pm2-backend",
-      script: "dist/app.js",
+      script: "./dist/app.js",
+      w,
     },
   ],
 
@@ -25,7 +26,7 @@ module.exports = {
       path: DEPLOY_PATH,
       "pre-deploy-local": `scp .env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
       "post-deploy":
-        "rm -rf frontend && cd backend && npm i &&  npm run build && ./node_modules/.bin/pm2 start ./dist/app.js",
+        "rm -rf frontend && cd backend && npm i &&  npm run build && ./node_modules/.bin/pm2 pm2 startOrRestart ecosystem.config.js ",
     },
   },
 };
