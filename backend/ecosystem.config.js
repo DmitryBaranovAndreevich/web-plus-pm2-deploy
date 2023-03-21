@@ -1,9 +1,10 @@
-require("dotenv").config();
+require("dotenv").config({ path: '.env.deploy' });
 
 const {
   DEPLOY_USER,
   DEPLOY_HOST,
   DEPLOY_PATH,
+  APP_PATH,
   DEPLOY_REF = "origin/main",
 } = process.env;
 
@@ -11,7 +12,7 @@ module.exports = {
   apps: [
     {
       name: "pm2-backend",
-      script: "./dist/app.js",
+      script: APP_PATH,
     },
   ],
 
