@@ -5,6 +5,7 @@ const {
   DEPLOY_HOST,
   DEPLOY_PATH,
   APP_PATH,
+  DEPLOY_REPO,
   DEPLOY_REF = "origin/main",
 } = process.env;
 
@@ -22,7 +23,7 @@ module.exports = {
       user: DEPLOY_USER,
       host: DEPLOY_HOST,
       ref: DEPLOY_REF,
-      repo: "https://github.com/DmitryBaranovAndreevich/web-plus-pm2-deploy.git",
+      repo: DEPLOY_REPO,
       path: DEPLOY_PATH,
       "pre-deploy-local": `scp .env.deploy ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
       "post-deploy":
